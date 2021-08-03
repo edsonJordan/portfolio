@@ -4,6 +4,7 @@ body{
   width: calc(100vw - (100vw - 100%));
   scroll-padding: 	90px;
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 :root {
