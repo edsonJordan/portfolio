@@ -41,7 +41,7 @@ body{
 }
 
 .circular-menu {
-  position: absolute;
+  position: fixed;
   width: 16rem;
   height: 16rem;
   background: #33bbff;
