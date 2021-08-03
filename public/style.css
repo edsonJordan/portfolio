@@ -16,7 +16,7 @@ body{
   height: 3rem;
   border-radius: 50%;
   background: #33bbff;
-  position: absolute;
+  position: fixed;
   bottom: 1rem;
   right: 1rem;
   z-index: 100;
