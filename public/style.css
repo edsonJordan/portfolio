@@ -1,0 +1,120 @@
+body{
+  margin: 0;
+  padding: 0;
+  width: calc(100vw - (100vw - 100%));
+  scroll-padding: 	90px;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --animation-time: 0.3s;
+}
+
+.float-button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #33bbff;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 100;
+  transition: transform var(--animation-time);
+  cursor: pointer;
+}
+.float-button.pulsed {
+  transform: rotate(45deg);
+  background: #0099e6;
+}
+.float-button::before, .float-button::after {
+  position: absolute;
+  width: 40%;
+  height: 4%;
+  content: "";
+  top: 49%;
+  left: 30%;
+  background: #fff;
+}
+.float-button::after {
+  transform: rotate(90deg);
+}
+
+.circular-menu {
+  position: absolute;
+  width: 16rem;
+  height: 16rem;
+  background: #33bbff;
+  bottom: -5.5rem;
+  right: -5.5rem;
+  border-radius: 50%;
+  transform: scale(0) rotate(-180deg);
+  opacity: 0;
+  transition: all var(--animation-time);
+  z-index: 50;
+}
+.circular-menu.expand {
+  transform: scale(1) rotate(0);
+  opacity: 1;
+}
+.circular-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.5rem;
+}
+.circular-menu a {
+  text-decoration: none;
+  display: block;
+  color: #fff;
+}
+.circular-menu li {
+  position: absolute;
+  width: 2rem;
+  top: 2rem;
+  left: calc(50% - 1rem);
+  transform-origin: center 6rem;
+  text-align: center;
+}
+
+.circular-menu li:nth-child(2) {
+  transform: rotate(-30deg);
+}
+.circular-menu li:nth-child(2) a {
+  transform: rotate(30deg);
+}
+
+.circular-menu li:nth-child(3) {
+  transform: rotate(-60deg);
+}
+.circular-menu li:nth-child(3) a {
+  transform: rotate(60deg);
+}
+
+.circular-menu li:nth-child(4) {
+  transform: rotate(-90deg);
+}
+.circular-menu li:nth-child(4) a {
+  transform: rotate(90deg);
+}
+.container {
+  display: flex;
+  overflow: auto;
+  flex: none;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  scroll-snap-type: y  mandatory;  
+  
+}
+.container > div {
+  scroll-snap-align: center;
+  text-align: center;
+  flex: none;
+  height: 100vh;
+}
+.container > div:nth-child(even) {
+  background-color: lightsalmon;
+}
+.container > div:nth-child(odd) {
+  background-color: lightpink;
+}
