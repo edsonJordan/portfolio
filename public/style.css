@@ -11,6 +11,10 @@ body{
   overflow: hidden;
   font-family: 'Karla', sans-serif;
 }
+img{
+  box-sizing: border-box;
+  display: block;
+}
 h1, h2{
   margin: 0;
 }
@@ -136,17 +140,17 @@ h1, h2{
   scroll-snap-type: y mandatory; 
 }
 .container .container__section {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   flex: none;
   height: 100vh;
 }
 .section__row{
-  position: static;
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: center;
   min-width: fit-content;
+  justify-content: space-evenly;
   padding: var(--padding-y) var(--padding-x);
   margin: var(--margin-y) var(--margin-x);
 }
@@ -154,14 +158,14 @@ h1, h2{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  row-gap: 8px;
+  row-gap: 15px;
 }
 
 .box__tittle{
   color: var(--color__secundary);
   font-weight: 700;
   font-size: var(--font--md);
-  letter-spacing: -.5px;
+  letter-spacing: .2px;
 
 }
 .strong{
@@ -176,11 +180,77 @@ h1, h2{
 }
 .box__span{
   color: var(--color__font);
-  font-size: var(--font--sm);
-  max-width: 60%;
+  font-size: var(--font--md);
+  max-width: 80%;
   line-height: 24px;
   }
   .icon__nav{
     fill: red;
     display: block;
+  }
+  .img__photo{
+    object-fit: cover;
+    width: 100%;
+    height:40%;
+  }
+  .btn{
+    position: relative;
+    display: flex;    
+    overflow: hidden;
+    background-color:  var(--color__primary);
+    color: var(--color__primary);
+    text-decoration: none;
+    padding: 12px 32px;
+    align-items: center;
+    width: fit-content;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 10px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    z-index:1;
+    transition: color 0s linear;
+    font-size: var(--font--md);
+  }
+
+  .btn:hover {
+    color:   white;
+    border: 1px solid var(--color__primary);
+    transition: color var(--animation-time) linear var(--animation-time);
+  }
+  
+  .btn:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 500px;
+      width: 500px;
+      border-radius: 100%;
+      background: #ffffff;
+    z-index: -1;
+    transition: all 0.5s linear;
+    transform: translate(-50%, -50%);
+    
+    
+  }
+  .btn:hover:before {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+  }
+  
+  .icon__download{
+    z-index: 2;
+    fill: var(--color__primary);
+    width: 25px;
+    height: 25px;
+    transform: scale(.8);
+  }
+ 
+  .btn:hover .icon{
+    fill: white;
   }
