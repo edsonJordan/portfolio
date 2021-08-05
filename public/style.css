@@ -6,8 +6,6 @@ body{
   margin: 0;
   padding: 0;
   width: calc(100vw - (100vw - 100%));
-  scroll-padding: 	90px;
-  scroll-behavior: smooth;
   overflow: hidden;
   font-family: 'Karla', sans-serif;
 }
@@ -18,9 +16,12 @@ img{
 h1, h2{
   margin: 0;
 }
+.none{
+  display: none;
+}
 :root {
   --animation-time: 0.3s;
-  --padding-x:15px;
+  --padding-x:25px;
   --padding-y:0px;  
   --margin-x:auto;
   --margin-y:0px;
@@ -29,7 +30,6 @@ h1, h2{
   --color__primary:#130F49;
   --color__secundary:#34A1CD;
   --color__font:#55527c;
-
   --color__gray--light:#b4b2c5;
   /*font size  */
   --font--sm:14px;
@@ -78,7 +78,7 @@ h1, h2{
   background: var(--color__secundary);
  
   bottom: -5.5rem;
-  right: -5.5rem;
+  right: -6rem;
   border-radius: 50%;
   transform: scale(0) rotate(-180deg);
   opacity: 0;
@@ -133,16 +133,23 @@ h1, h2{
 .container {
   display: flex;
   overflow: auto;
-  flex: none;
+  /* flex: none; */
   width: 100%;
   height: 100vh;
   flex-direction: column;
   scroll-snap-type: y mandatory; 
 }
 .container .container__section {
+  position: sticky;
   scroll-snap-align: center;
   flex: none;
   height: 100vh;
+}
+.container__section:nth-child(1){
+  background-image: url(/resource/bg/bg-top-right.svg);
+  background-position-y: top;
+  background-position-x: right;
+  background-repeat: no-repeat;
 }
 .section__row{
   display: flex;
@@ -166,7 +173,11 @@ h1, h2{
   font-weight: 700;
   font-size: var(--font--md);
   letter-spacing: .2px;
-
+}
+.box__tittle--content{
+  color: var(--color__secundary);
+  
+  text-transform: uppercase;
 }
 .strong{
   display:block;
@@ -178,12 +189,19 @@ h1, h2{
   margin-left: -2px;
   letter-spacing: 0;
 }
+.strong--content{
+  
+  text-transform: initial;
+}
 .box__span{
   color: var(--color__font);
   font-size: var(--font--md);
   max-width: 80%;
   line-height: 24px;
   }
+.box__span.content{
+  max-width: 100%;
+}
   .icon__nav{
     fill: red;
     display: block;
@@ -193,6 +211,7 @@ h1, h2{
     width: 100%;
     height:40%;
   }
+  /* Button component */
   .btn{
     position: relative;
     display: flex;    
@@ -200,7 +219,7 @@ h1, h2{
     background-color:  var(--color__primary);
     color: var(--color__primary);
     text-decoration: none;
-    padding: 12px 32px;
+    padding: 15px 30px;
     align-items: center;
     width: fit-content;
     justify-content: center;
@@ -211,14 +230,39 @@ h1, h2{
     z-index:1;
     transition: color 0s linear;
     font-size: var(--font--md);
+    line-height: 20px;
+    
   }
+  .btn .icon{
+    z-index: 2;
+    fill: var(--color__primary);
+    width: 25px;
+    height: 25px;
+    transform: scale(.8);
+  }
+  .icon--social{
+    width: 14pt;
+    height: 14pt;
+    fill: var(--color__font) ;
+    padding: 4px;
+    border-radius: 25%;
+    background-color: #EDF2F7;
+    
+  }
+  /* End component button */
 
+  /* Effect hover button */
+  .btn:hover:before {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+  } 
   .btn:hover {
     color:   white;
     border: 1px solid var(--color__primary);
     transition: color var(--animation-time) linear var(--animation-time);
   }
-  
   .btn:before {
       content: "";
       position: absolute;
@@ -232,25 +276,9 @@ h1, h2{
       background: #ffffff;
     z-index: -1;
     transition: all 0.5s linear;
-    transform: translate(-50%, -50%);
-    
-    
-  }
-  .btn:hover:before {
-    width: 0;
-    height: 0;
-    top: 50%;
-    left: 50%;
-  }
-  
-  .icon__download{
-    z-index: 2;
-    fill: var(--color__primary);
-    width: 25px;
-    height: 25px;
-    transform: scale(.8);
-  }
- 
+    transform: translate(-50%, -50%);    
+  }  
   .btn:hover .icon{
     fill: white;
   }
+  /* End effect component button */
