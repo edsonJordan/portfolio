@@ -9,6 +9,11 @@ body{
  
   font-family: 'Karla', sans-serif;
 }
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 img{
   box-sizing: border-box;
   display: block;
@@ -202,7 +207,7 @@ h1, h2{
 }
 .strong--content{
   
-  text-transform: initial;
+  text-transform: capitalize;
 }
 .box__span{
   color: var(--color__font);
@@ -292,14 +297,63 @@ h1, h2{
     transition: all 0.5s linear;
     transform: translate(-50%, -50%);    
   }
-
   .btn:hover .icon{
     fill: white;
-    transition: fill var(--animation-time) linear var(--animation-time);
-   
-  }
-  
+    transition: fill var(--animation-time) linear var(--animation-time);   
+  }  
   .btn--social:hover .icon--social{
     fill: var(--color__primary);
   }
   /* End effect component button */
+  .box__card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  /* Start component card */
+  .card{
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    flex-direction: column;   
+    padding: 1rem 1rem; 
+    border: 1px solid transparent;
+    width: 80%;
+    align-self: center;
+  }
+  .card:hover{
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
+  .card__header{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    column-gap: 20px;
+    color: var(--color__primary);
+    line-height: 5px;
+    font-weight: 600;
+    justify-content: center;
+  }
+  .icon__skill{
+    width: 20pt;
+    height: 20pt;
+    fill: var(--color__primary);
+  }
+  .list__card{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+  .li__card{
+    color: var(--color__font);
+    font-size: var(--font--md);
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+  }
+  /* End component card */
