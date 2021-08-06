@@ -170,7 +170,7 @@ h1, h2{
   height: 100%;
   justify-content: center;
   min-width: fit-content;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: var(--padding-y) var(--padding-x);
   margin: var(--margin-y) var(--margin-x);
 }
