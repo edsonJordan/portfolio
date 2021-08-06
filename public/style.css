@@ -154,9 +154,13 @@ h1, h2{
 }
 .container .container__section {
   position: sticky;
-  scroll-snap-align: center;
-  flex: none;
-  height: 100vh;
+  display: block;
+  scroll-snap-align: center; 
+  min-height: 100%;
+}
+.container .container__section:nth-child(odd){
+
+  
 }
 .container__section:nth-child(1){
   background-image: url(/resource/bg/bg-top-right.svg);
@@ -314,15 +318,13 @@ h1, h2{
   .card{
     display: flex;
     position: relative;
-    flex-direction: column;   
-    
+    flex-direction: column; 
     padding: 1rem 1rem; 
     border: 1px solid transparent;
     width: 80%;
     align-self: center;
     border-radius: 20px;
-    min-height: 10.2rem;
-  
+    min-height: 10rem;
     /* box-shadow: 20px 20px 30px 10px blue,
     -5px -5px 30px 10px red; */
   }
@@ -360,7 +362,7 @@ h1, h2{
   .list__card{
     display: flex;
     flex-direction: column;
-    row-gap: 5px;
+    row-gap: 3px;
   }
   .li__card{
     color: var(--color__font);
