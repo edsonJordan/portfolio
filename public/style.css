@@ -35,8 +35,8 @@ h1, h2{
   --margin-y:0px;
 
   /*Colors  */
-  --color__primary:	hsl(244, 66%, 17%);
-  --color__secundary:	hsl(197, 60%, 50%);
+  --color__primary:	hsl(244, 66%, 17%); /* #120E47  rgb(18,14,71)*/
+  --color__secundary:	hsl(197, 60%, 50%); 
   --color__font:hsl(244, 20%, 40%);
 
   --color__gray--low:hsl(210, 38%, 95%);
@@ -309,41 +309,54 @@ h1, h2{
     width: 100%;
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 20px;
   }
   /* Start component card */
   .card{
     display: flex;
-    cursor: pointer;
     position: relative;
     flex-direction: column;   
+    
     padding: 1rem 1rem; 
     border: 1px solid transparent;
     width: 80%;
     align-self: center;
+    border-radius: 20px;
+    min-height: 10.2rem;
+  
+    /* box-shadow: 20px 20px 30px 10px blue,
+    -5px -5px 30px 10px red; */
   }
   .card:hover{
-    background: rgba( 255, 255, 255, 0.25 );
+   /*  background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+    box-shadow: 20px 20px 30px 10px #F4F3FF,    
+    -5px -5px 30px 10px #F4F3FF; 
   }
   .card__header{
     display: flex;
     flex-direction: row;
     align-items:center;
-    column-gap: 20px;
-    color: var(--color__primary);
+    column-gap: 10px;
+    color: rgb(18,14,71, .8);    
     line-height: 5px;
     font-weight: 600;
     justify-content: center;
   }
+  .card:hover .card__header{
+    color: var(--color__primary);
+  }
+  .card:hover .icon__skill{
+    fill: var(--color__primary);
+  }
   .icon__skill{
     width: 20pt;
     height: 20pt;
-    fill: var(--color__primary);
+    fill: rgb(18,14,71, .8); 
   }
   .list__card{
     display: flex;
