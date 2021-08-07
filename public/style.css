@@ -44,6 +44,7 @@ h1, h2, h3{
   /*font size  */
   --font--sm:14px;
   --font--md:16px;
+  --font--2md:18px;
   --font-lg:32px;
   --font-xl:38px;
   --font-2xl:40px;
@@ -398,7 +399,7 @@ h1, h2, h3{
     background-color: #fff5f6;
   }
   .portfolio__li{
-    border: 1px solid var(--color__gray--light);
+    border: 2px solid var(--color__gray--light);
     padding: 3px;
     cursor: pointer;
   }
@@ -409,9 +410,9 @@ h1, h2, h3{
     border-left: none;
   }
   .portfolio__inp:checked + .portfolio__li{
-    border-bottom: 1px solid rgb(18,14,71, .8);
+    border-bottom: 2px solid rgb(18,14,71, .8);
     color: var(--color__primary);
-    font-weight: 700;
+    font-weight: 800;
   }
   /* End Component  checklist portfolio*/
   /*Start Section portfolio */
@@ -427,7 +428,7 @@ h1, h2, h3{
   width: 100%;
   scroll-snap-type: x mandatory;
   column-gap: 20px;
-
+  padding-top: 20px;
 }
 .box__portfolio{
   display: flex;
@@ -440,12 +441,13 @@ h1, h2, h3{
 .box__tittle--portfolio{
   color: var(--color__primary);
   font-weight: 500;
+  font-size: var(--font--2md);
 }
 .strong--portfolio{
   margin-top: 10px;
+  font-size: var(--font--md);
   color: var(--color__secundary);
   display: block;
-  line-height: 40px;
 }
 
 ::-webkit-scrollbar {
