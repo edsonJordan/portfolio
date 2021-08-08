@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body id="body">
-  <!-- Nagigation -->
+  <!-- Start Navigation -->
   <div id="nav" >
     <div class="float-button" id="float-button"></div>
     <nav class="circular-menu" id="circular-menu">
@@ -36,13 +36,14 @@
       </ul>
     </nav>
   </div>
-    
-  <!-- Container -->
+  <!-- End Navigation -->    
+  <!-- Start Container -->
   <div class="container">
+      <!--Start Presentation Section  -->
       <header class="container__section ">
-        <article class="section__row">
-            <img src="resource/img/photo.jpeg" class="img__photo" alt="">
-            <div class="row__box">
+        <article class="section__row">           
+            <div class="row__box presentation">
+              <img src="resource/img/photo.jpeg" class="img__photo" alt="">
               <h1 class="box__tittle" >Hola, mi nombre es <strong class="strong">Edson Huamani</strong> 
               </h1>
               <span class="box__span" >Soy desarrollador especializado en crear experiencias digitales excepcionales.</span>   
@@ -55,9 +56,11 @@
             </div>            
         </article>
       </header>
+      <!-- End Presentation section  -->
+      <!-- Start About Section -->
       <section class="container__section ">
-        <article class="section__row">          
-          <div class="row__box">
+        <article class="section__row ">          
+          <div class="row__box about">
             <h2 class="box__tittle box__tittle--content" >Información básica  <strong class="strong strong--content">Sobre mi</strong> 
             </h2>
             <span class="box__span content" >              
@@ -82,105 +85,112 @@
           </div>         
         </article>        
       </section>
-      <section class="container__section ">
-        <div class="section__row">          
-          <article class="row__box">
-            <div class="row__box">
+      <!-- End About section -->
+      <!-- Start Skills section -->
+      <section class="container__section ">          
+          <article class="section__row">
+            <div class="row__box skill">
               <h2 class="box__tittle box__tittle--content" >+5 Años de experiencia <strong class="strong strong--content"> Mis habilidades</strong> 
-              </h2>                          
-            </div>              
-            <div class="box__card">
-              <div class="card">
-                <div class="card__header">
-                  <svg class="icon__skill"   >
-                    <path d="m22.562 8.5a4.994 4.994 0 0 0 -3.562-8.5h-14a4.994 4.994 0 0 0 -3.562 8.5 4.978 4.978 0 0 0 0 7 4.994 4.994 0 0 0 3.562 8.5h14a4.994 4.994 0 0 0 3.562-8.5 4.978 4.978 0 0 0 0-7zm-17.562 5.5a2 2 0 0 1 0-4v.5a1.5 1.5 0 0 0 3 0v-.5h2v.5a1.5 1.5 0 0 0 3 0v-.5h6a2 2 0 0 1 0 4zm0-11v.5a1.5 1.5 0 0 0 3 0v-.5h2v.5a1.5 1.5 0 0 0 3 0v-.5h6a2 2 0 0 1 0 4h-14a2 2 0 0 1 0-4zm14 18h-14a2 2 0 0 1 0-4v.5a1.5 1.5 0 0 0 3 0v-.5h2v.5a1.5 1.5 0 0 0 3 0v-.5h6a2 2 0 0 1 0 4z"/>
-                  </svg>
-                  <h3>Database</h3>                
+              </h2>
+              <div class="box__card">
+                <div class="card">
+                  <div class="card__header">
+                    <svg class="icon__skill"   >
+                      <path d="m22.562 8.5a4.994 4.994 0 0 0 -3.562-8.5h-14a4.994 4.994 0 0 0 -3.562 8.5 4.978 4.978 0 0 0 0 7 4.994 4.994 0 0 0 3.562 8.5h14a4.994 4.994 0 0 0 3.562-8.5 4.978 4.978 0 0 0 0-7zm-17.562 5.5a2 2 0 0 1 0-4v.5a1.5 1.5 0 0 0 3 0v-.5h2v.5a1.5 1.5 0 0 0 3 0v-.5h6a2 2 0 0 1 0 4zm0-11v.5a1.5 1.5 0 0 0 3 0v-.5h2v.5a1.5 1.5 0 0 0 3 0v-.5h6a2 2 0 0 1 0 4h-14a2 2 0 0 1 0-4zm14 18h-14a2 2 0 0 1 0-4v.5a1.5 1.5 0 0 0 3 0v-.5h2v.5a1.5 1.5 0 0 0 3 0v-.5h6a2 2 0 0 1 0 4z"/>
+                    </svg>
+                    <h3>Database</h3>                
+                  </div>
+                  <div class="card__body">
+                    <ul class="list__card">
+                      <li class="li__card" >PostgreSQL</li>
+                      <li class="li__card" >Mysql</li>
+                      <li class="li__card" >Firebase</li>                  
+                    </ul>
+                  </div>
                 </div>
-                <div class="card__body">
-                  <ul class="list__card">
-                    <li class="li__card" >PostgreSQL</li>
-                    <li class="li__card" >Mysql</li>
-                    <li class="li__card" >Firebase</li>                  
-                  </ul>
+                <div class="card">
+                  <div class="card__header">
+                    <svg class="icon__skill"   >
+                      <path d="M18.5,0H5.5A5.506,5.506,0,0,0,0,5.5v8A5.506,5.506,0,0,0,5.5,19h5v2H8a1.5,1.5,0,0,0,0,3h8a1.5,1.5,0,0,0,0-3H13.5V19h5A5.506,5.506,0,0,0,24,13.5v-8A5.506,5.506,0,0,0,18.5,0ZM5.5,3h13A2.5,2.5,0,0,1,21,5.5V13H3V5.5A2.5,2.5,0,0,1,5.5,3Z"/>
+                    </svg>
+                    <h3>Frontend</h3>                
+                  </div>
+                  <div class="card__body">
+                    <ul class="list__card">
+                      <li class="li__card" >JavaScript</li>
+                      <li class="li__card" >Css</li>
+                      <li class="li__card" >Html</li> 
+                      <li class="li__card" >Bootstrap</li>
+                      <li class="li__card" >Tailwind</li>                 
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              <div class="card">
-                <div class="card__header">
-                  <svg class="icon__skill"   >
-                    <path d="M18.5,0H5.5A5.506,5.506,0,0,0,0,5.5v8A5.506,5.506,0,0,0,5.5,19h5v2H8a1.5,1.5,0,0,0,0,3h8a1.5,1.5,0,0,0,0-3H13.5V19h5A5.506,5.506,0,0,0,24,13.5v-8A5.506,5.506,0,0,0,18.5,0ZM5.5,3h13A2.5,2.5,0,0,1,21,5.5V13H3V5.5A2.5,2.5,0,0,1,5.5,3Z"/>
-                  </svg>
-                  <h3>Frontend</h3>                
-                </div>
-                <div class="card__body">
-                  <ul class="list__card">
-                    <li class="li__card" >JavaScript</li>
-                    <li class="li__card" >Css</li>
-                    <li class="li__card" >Html</li> 
-                    <li class="li__card" >Bootstrap</li>
-                    <li class="li__card" >Tailwind</li>                 
-                  </ul>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card__header">
-                  <svg class="icon__skill"   >
-                    <path d="m8.5 0h-4a4.505 4.505 0 0 0 -4.5 4.5v1a4.505 4.505 0 0 0 4.5 4.5h.5v1h-.5a1.5 1.5 0 0 0 0 3h4a1.5 1.5 0 0 0 0-3h-.5v-1h.5a4.505 4.505 0 0 0 4.5-4.5v-1a4.505 4.505 0 0 0 -4.5-4.5zm1.5 5.5a1.5 1.5 0 0 1 -1.5 1.5h-4a1.5 1.5 0 0 1 -1.5-1.5v-1a1.5 1.5 0 0 1 1.5-1.5h4a1.5 1.5 0 0 1 1.5 1.5zm5-1a1.5 1.5 0 0 1 1.5-1.5h1a3.5 3.5 0 0 1 3.5 3.5v1a1.5 1.5 0 0 1 -3 0v-1a.5.5 0 0 0 -.5-.5h-1a1.5 1.5 0 0 1 -1.5-1.5zm-2 16a1.5 1.5 0 0 1 -1.5 1.5h-3a3.5 3.5 0 0 1 -3.5-3.5v-1a1.5 1.5 0 0 1 3 0v1a.5.5 0 0 0 .5.5h3a1.5 1.5 0 0 1 1.5 1.5zm8-9.5h-3a3 3 0 0 0 -3 3v7a3 3 0 0 0 3 3h3a3 3 0 0 0 3-3v-7a3 3 0 0 0 -3-3zm-1.5 11a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1 -1.5 1.5z"/>
-                  </svg>
-                  <h3>Backend</h3>                
-                </div>
-                <div class="card__body">
-                  <ul class="list__card">
-                    <li class="li__card" >Php</li>
-                    <li class="li__card" >Laravel</li>                  
-                  </ul>
-                </div>
+                <div class="card">
+                  <div class="card__header">
+                    <svg class="icon__skill"   >
+                      <path d="m8.5 0h-4a4.505 4.505 0 0 0 -4.5 4.5v1a4.505 4.505 0 0 0 4.5 4.5h.5v1h-.5a1.5 1.5 0 0 0 0 3h4a1.5 1.5 0 0 0 0-3h-.5v-1h.5a4.505 4.505 0 0 0 4.5-4.5v-1a4.505 4.505 0 0 0 -4.5-4.5zm1.5 5.5a1.5 1.5 0 0 1 -1.5 1.5h-4a1.5 1.5 0 0 1 -1.5-1.5v-1a1.5 1.5 0 0 1 1.5-1.5h4a1.5 1.5 0 0 1 1.5 1.5zm5-1a1.5 1.5 0 0 1 1.5-1.5h1a3.5 3.5 0 0 1 3.5 3.5v1a1.5 1.5 0 0 1 -3 0v-1a.5.5 0 0 0 -.5-.5h-1a1.5 1.5 0 0 1 -1.5-1.5zm-2 16a1.5 1.5 0 0 1 -1.5 1.5h-3a3.5 3.5 0 0 1 -3.5-3.5v-1a1.5 1.5 0 0 1 3 0v1a.5.5 0 0 0 .5.5h3a1.5 1.5 0 0 1 1.5 1.5zm8-9.5h-3a3 3 0 0 0 -3 3v7a3 3 0 0 0 3 3h3a3 3 0 0 0 3-3v-7a3 3 0 0 0 -3-3zm-1.5 11a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1 -1.5 1.5z"/>
+                    </svg>
+                    <h3>Backend</h3>                
+                  </div>
+                  <div class="card__body">
+                    <ul class="list__card">
+                      <li class="li__card" >Php</li>
+                      <li class="li__card" >Laravel</li>                  
+                    </ul>
+                  </div>
+                </div>                          
               </div>                          
-            </div>
-          </article>     
-        </div>
+            </div>              
+            
+          </article>        
       </section>
+      <!-- End Skills section -->
+      <!-- Start Portfolio section -->
       <section class="container__section ">        
         <article class="section__row">
-          <div class="row__box">
+          <div class="row__box portfolio">
             <h2 class="box__tittle box__tittle--content" >Conoce mis proyectos <strong class="strong strong--content">Ver portafolio</strong> 
-            </h2>                          
+            </h2>
+            
+            <ul class="portfolio__list">
+              <input type="radio" name="list_portf" class="none portfolio__inp" id="ligen">
+              <label class="portfolio__li" for="ligen">General</label>
+              <input type="radio" name="list_portf" class="none portfolio__inp" id="limaq">
+              <label class="portfolio__li" for="limaq">Maquetación</label>
+              <input type="radio" name="list_portf" class="none portfolio__inp" id="liapp">
+              <label class="portfolio__li" for="liapp">Applicación</label>
+              <input type="radio" name="list_portf" class="none portfolio__inp" id="lilad">
+              <label class="portfolio__li" for="lilad">Lading Page</label>                          
+            </ul>
+            <div class="portfolio__box">
+              <div class="box__portfolio">
+                <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" alt="" class="img img__porftolio">
+                <h3 class="box__tittle--portfolio" >Diseño de interfaz para  <strong class="strong--portfolio">Empresa</strong> 
+                </h3>
+              </div>
+              <div class="box__portfolio">
+                <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" alt="" class="img img__porftolio">
+                <h3 class="box__tittle--portfolio" >Diseño de interfaz para  <strong class="strong--portfolio">Empresa</strong> 
+                </h3>
+              </div>
+              <div class="box__portfolio">
+                <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" alt="" class="img img__porftolio">
+                <h3 class="box__tittle--portfolio" >Diseño de interfaz para  <strong class="strong--portfolio">Empresa</strong> 
+                </h3>
+              </div>
+              <div class="box__portfolio">
+                <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" alt="" class="img img__porftolio">
+                <h3 class="box__tittle--portfolio" >Diseño de interfaz para  <strong class="strong--portfolio">Empresa</strong> 
+                </h3>
+              </div>
+            </div>
           </div>
-          <ul class="portfolio__list">
-            <input type="radio" name="list_portf" class="none portfolio__inp" id="ligen">
-            <label class="portfolio__li" for="ligen">General</label>
-            <input type="radio" name="list_portf" class="none portfolio__inp" id="limaq">
-            <label class="portfolio__li" for="limaq">Maquetación</label>
-            <input type="radio" name="list_portf" class="none portfolio__inp" id="liapp">
-            <label class="portfolio__li" for="liapp">Applicación</label>
-            <input type="radio" name="list_portf" class="none portfolio__inp" id="lilad">
-            <label class="portfolio__li" for="lilad">Lading Page</label>                          
-          </ul>
-          <div class="portfolio__box">
-            <div class="box__portfolio">
-              <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" alt="" class="img img__porftolio">
-              <h3 class="box__tittle--portfolio" >Diseño de interfaz para  <strong class="strong--portfolio">Empresa</strong> 
-              </h3>
-            </div>
-            <div class="box__portfolio">
-              <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" alt="" class="img img__porftolio">
-              <h3 class="box__tittle--portfolio" >Diseño de interfaz para  <strong class="strong--portfolio">Empresa</strong> 
-              </h3>
-            </div>
-            <div class="box__portfolio">
-              <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" alt="" class="img img__porftolio">
-              <h3 class="box__tittle--portfolio" >Diseño de interfaz para  <strong class="strong--portfolio">Empresa</strong> 
-              </h3>
-            </div>
-            <div class="box__portfolio">
-              <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" alt="" class="img img__porftolio">
-              <h3 class="box__tittle--portfolio" >Diseño de interfaz para  <strong class="strong--portfolio">Empresa</strong> 
-              </h3>
-            </div>
-          </div>                           
+                                     
         </article>
           
       </section>
+      <!-- End Portfolio section -->
+      <!-- Start Contact section -->
       <section class="container__section">
         <article class="section__row ">          
           <div class="row__box row__box--contact">
@@ -194,7 +204,9 @@
           </div>         
         </article>        
       </section>
-  </div>      
+      <!-- End Contact section -->
+  </div>
+  <!-- End Container -->      
   <script src="public/script.js"></script>
 </body>
 
