@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&display=swap');
 body{
   margin: 0;
@@ -130,6 +129,9 @@ h1, h2, h3{
   transition: all var(--animation-time);
   z-index: 50;
 }
+.menu__text{
+  display: none;
+}
 
 .circular-menu.expand {
   transform: scale(1) rotate(0);
@@ -177,6 +179,7 @@ h1, h2, h3{
   transform: rotate(90deg);
 }
 
+/* End Navigation Component */
 .container {
   display: flex;
   overflow: auto;
@@ -334,8 +337,12 @@ h1, h2, h3{
     fill: var(--color__font) ;
     padding: 4px;
     border-radius: 25%;
-    background-color: var(--color__gray--low);
-    
+    background-color: var(--color__gray--low);    
+  }
+  .icon--nav{
+    width: 18pt;
+    height: 18pt;
+    fill: white;
   }
   /* End component button */
 
@@ -564,15 +571,58 @@ h1, h2, h3{
   } 
   
 }
-@media (min-width: 768px) {
-  
+@media (min-width: 768px) {  
   .row__box{
     text-align: start;    
   }
   .box__card {
     flex-direction: row;
   }
+  .float-button{
+    top: 1rem;
+  }
+  .circular-menu.expand{
+    border-radius: initial;
+    box-shadow: initial;
+    height: 100%;
+  }
+  .circular-menu {
+    top: 0rem;    
+    transform: initial;
+    transition: initial;
+    right: 0px;
+    width: 15rem;    
+  }
+  .circular-menu a{
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+  }  
+  .circular-menu .menu__link.active {
+    color: var(--color__primary);   
+  }
+  .menu__link.active .icon--nav{
+    fill: var(--color__primary);
+  }
+  .circular-menu ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
+    
+  }
+  .circular-menu li{
+    width: 60%;
+    position: initial;
+    transform-origin: initial;
+  }
+  .menu__text{
+    display: initial;
+  }
+  
 }
+
 @media (min-width: 1024px) {
   
   .row__box--contact{
