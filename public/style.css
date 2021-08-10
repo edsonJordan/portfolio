@@ -4,6 +4,7 @@ body{
   padding: 0;
   width: calc(100vw - (100vw - 100%));
   font-family: 'Karla', sans-serif;
+ 
 }
 ul{
   list-style: none;
@@ -24,7 +25,7 @@ h1, h2, h3{
   display: none;
 }
 :root {
-  --animation-time: 0.3s;
+  --animation-time: 0.6s;
   --padding-x:25px;
   --padding-y:0px;  
   --margin-x:auto;
@@ -140,6 +141,13 @@ h1, h2, h3{
              20px 20px 60px #ffffff; */
              box-shadow:-5px -5px 30px 10px #f4f3ff, 20px 20px 30px 10px #f4f3ff ;
 }
+
+.circular-menu .menu__link.active {
+  color: var(--color__primary);   
+}
+.menu__link.active .icon--nav{
+  fill: var(--color__primary);
+}
 .circular-menu ul {
   margin: 0;
   padding: 0;
@@ -194,7 +202,6 @@ h1, h2, h3{
   scroll-snap-align: center; 
   min-height: 100%;
 }
-
 .container__section:nth-child(1){
   background-image: url(/resource/bg/bg-top-right.svg);
   background-position-y: top;
@@ -391,6 +398,7 @@ h1, h2, h3{
   .btn--social:hover .icon--social{
     fill: var(--color__primary);
   }
+
   /* End effect component button */
 
   
@@ -485,9 +493,11 @@ h1, h2, h3{
     background-color: #fff5f6;
   }
   .portfolio__li{
-    border: 1.5px solid var(--color__gray--light);
+    border: 2px solid var(--color__gray--light);
+    color: rgb(18,14,71, .8);
     padding: 3px;
     cursor: pointer;
+    font-weight: 700;
   }
   .portfolio__li:nth-child(n+5){
     border-top: none;
@@ -496,9 +506,9 @@ h1, h2, h3{
     border-left: none;
   }
   .portfolio__inp:checked + .portfolio__li{
-    border-bottom: 1.5px solid rgb(18,14,71, .8);
+    border-bottom: 2px solid rgb(18,14,71, .8);
     color: var(--color__primary);
-    font-weight: 800;
+    
   }
   /* End Component  checklist portfolio*/
   /*Start Section portfolio */
@@ -540,9 +550,23 @@ h1, h2, h3{
 ::-webkit-scrollbar {
   width: 0px;
 }
-@media (min-width: 640px) {
+@media (min-width: 640px) {  
+  .section__row{
+    align-items: center;
+  }
   .row__box{
     height: 80%;
+  }
+  .row__box--presentation{   
+    text-align: center;    
+    align-items: center;
+    height: initial;
+  }
+  .section__row--presentation{
+    flex-direction: row;
+  }
+  .row__box--about{
+    height: 50%;
   }
   .box__tittle{
     justify-self: start;
@@ -553,14 +577,14 @@ h1, h2, h3{
   .box__tittle--portfolio{
     text-align: center;
   }
-
   .portfolio__list{
     grid-template-columns: repeat(4,minmax( 130px, 1fr));
-    width: 80%;
   }
   .portfolio__li{
     border: none;
-    border-bottom: 1.5px solid var(--color__gray--light);    
+    border-bottom: 2px solid var(--color__gray--light);  
+    padding: 16.76px;  
+    text-align: center;
   }
   .box__portfolio{
     align-items: center;
@@ -569,14 +593,35 @@ h1, h2, h3{
     width: 55%;
     height: 100%;
   } 
-  
 }
 @media (min-width: 768px) {  
-  .row__box{
-    text-align: start;    
+  .container{
+    counter-reset: section;
   }
+  .container__section::after {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: .6rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    border: 2px solid var(--color__secundary);
+    counter-increment: section;
+    content: "0"counters(section,".") ;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--color__secundary);
+}
   .box__card {
     flex-direction: row;
+    align-items: center;
+  }
+  .card{
+    height: fit-content;
+    justify-content: flex-start;
+    align-self: initial;
+    row-gap: 10px;
   }
   .float-button{
     top: 1rem;
@@ -603,19 +648,12 @@ h1, h2, h3{
     flex-direction: row;
     column-gap: 5px;
   }  
-  .circular-menu .menu__link.active {
-    color: var(--color__primary);   
-  }
-  .menu__link.active .icon--nav{
-    fill: var(--color__primary);
-  }
   .circular-menu ul{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     height: 100%;
     align-items: center;
-    
   }
   .circular-menu li{
     width: 60%;
@@ -625,9 +663,7 @@ h1, h2, h3{
   .menu__text{
     display: initial;
   }
-  
 }
-
 @media (min-width: 1024px) {
   
   .row__box--contact{
@@ -636,7 +672,6 @@ h1, h2, h3{
     align-self: center;
   }
   .img__porftolio {
-    
     height: 80%;
-  } 
+  }
 }  
