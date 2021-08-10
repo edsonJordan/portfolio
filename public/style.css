@@ -584,14 +584,19 @@ h1, h2, h3{
   .circular-menu.expand{
     border-radius: initial;
     box-shadow: initial;
-    height: 100%;
+    right: 0px;
+    transition: right var(--animation-time);
   }
   .circular-menu {
     top: 0rem;    
     transform: initial;
     transition: initial;
-    right: 0px;
+    right: -15rem;
+    transition: right var(--animation-time);
     width: 15rem;    
+    border-radius: initial;
+    opacity: 1;
+    height: 100%;
   }
   .circular-menu a{
     display: flex;
