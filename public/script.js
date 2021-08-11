@@ -35,7 +35,7 @@ document.getElementById('container').addEventListener('scroll', (e) => {
     let heightDiv = document.getElementById('presentation').clientHeight;
     let focusDiv = posiScroll / heightDiv;
     const list =  document.getElementById('listNav');
-    switch (focusDiv) {
+    switch (Math.round(focusDiv)) {
       case 0:                       
         list.getElementsByClassName('active')[0].classList.remove('active');
         list.childNodes[1].childNodes[1].classList.add('active')
@@ -57,7 +57,5 @@ document.getElementById('container').addEventListener('scroll', (e) => {
         list.childNodes[7].childNodes[1].classList.add('active');
       break;
     }
-    console.log(focusDiv);
-
   }, 200);
-});
+}, true);
