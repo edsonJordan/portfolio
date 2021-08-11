@@ -25,13 +25,10 @@ switch (e.target.nodeName) {
   break;
 }
 });
-
-function breakDiv(number, list){
- 
+function breakDiv(number, list){ 
   list.getElementsByClassName('active')[0].classList.remove('active');
   list.childNodes[number].childNodes[1].classList.add('active')
 }
-
 var timer = null;
 document.getElementById('container').addEventListener('scroll', (e) => {
   clearTimeout(timer);
