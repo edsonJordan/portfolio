@@ -26,6 +26,12 @@ switch (e.target.nodeName) {
 }
 });
 
+function breakDiv(number, list){
+ 
+  list.getElementsByClassName('active')[0].classList.remove('active');
+  list.childNodes[number].childNodes[1].classList.add('active')
+}
+
 var timer = null;
 document.getElementById('container').addEventListener('scroll', (e) => {
   clearTimeout(timer);
@@ -37,25 +43,20 @@ document.getElementById('container').addEventListener('scroll', (e) => {
     const list =  document.getElementById('listNav');
     switch (Math.round(focusDiv)) {
       case 0:                       
-        list.getElementsByClassName('active')[0].classList.remove('active');
-        list.childNodes[1].childNodes[1].classList.add('active')
+        breakDiv(1, list);
         break;
       case 1:
-        list.getElementsByClassName('active')[0].classList.remove('active');           
-        list.childNodes[3].childNodes[1].classList.add('active');     
+        breakDiv(3, list);  
         break;
       case 2:            
-        list.getElementsByClassName('active')[0].classList.remove('active');   
-        list.childNodes[3].childNodes[1].classList.add('active');
+        breakDiv(3, list); 
       break;
       case 3:            
-        list.getElementsByClassName('active')[0].classList.remove('active');   
-        list.childNodes[5].childNodes[1].classList.add('active');
+        breakDiv(5, list); 
       break;
       case 4:            
-        list.getElementsByClassName('active')[0].classList.remove('active');   
-        list.childNodes[7].childNodes[1].classList.add('active');
+        breakDiv(7, list); 
       break;
     }
-  }, 200);
+  }, 150);
 }, true);

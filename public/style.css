@@ -545,9 +545,9 @@ h1, h2, h3{
   color: var(--color__secundary);
   display: block;
 }
-  /* ::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 0px;
-  } */
+  }
 @media (min-width: 640px) {  
   .section__row{
     align-items: center;
