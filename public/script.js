@@ -60,4 +60,3 @@ document.getElementById('container').addEventListener('scroll', (e) => {
 
   }, 200);
 }, true);
-alert("Hola mundo");
