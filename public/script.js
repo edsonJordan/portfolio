@@ -57,6 +57,7 @@ document.getElementById('container').addEventListener('scroll', (e) => {
         list.childNodes[7].childNodes[1].classList.add('active');
       break;
     }
+    console.log(focusDiv);
 
   }, 200);
-}, true);
+});
