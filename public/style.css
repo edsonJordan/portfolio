@@ -47,7 +47,6 @@ h1, h2, h3{
   --font-xl:2.375em; /* 38px */
   --font-2xl:2.5em; /* 40px */
   --font-3xl:3.25em; /* 52px */
-
   /* Small, medium, large, xlarge, 2xlarge */
 }
 .float-button {
@@ -60,12 +59,11 @@ h1, h2, h3{
   background: var(--color__secundary);
   position: fixed;
   bottom: 1rem;
-  right: 1rem;
+  right: .65rem;
   z-index: 100;
   transition: transform var(--animation-time);
   cursor: pointer;
 }
-
 .float-button::after {
   transform: rotate(90deg);
 }
@@ -547,9 +545,9 @@ h1, h2, h3{
   color: var(--color__secundary);
   display: block;
 }
-::-webkit-scrollbar {
-  width: 0px;
-}
+  /* ::-webkit-scrollbar {
+    width: 0px;
+  } */
 @media (min-width: 640px) {  
   .section__row{
     align-items: center;
@@ -608,7 +606,7 @@ h1, h2, h3{
     margin-right: 1rem;
     border: 2px solid var(--color__secundary);
     counter-increment: section;
-    content: "0"counters(section,".") ;
+    content: "0"counters(section,"") ;
     font-weight: 800;
     font-size: 1.2rem;
     color: var(--color__secundary);
