@@ -58,16 +58,45 @@ document.getElementById('container').addEventListener('scroll', (e) => {
   }, 150);
 }, true);
 
-const breakdownButton = document.querySelectorAll('.link__arrow');
+/* const breakdownButton = document.querySelectorAll('.link__arrow');
 breakdownButton.forEach(function(btn) {
   btn.addEventListener('click', function(e) {
+  });
+}); */
+const arrows = document.querySelectorAll('.link__arrow');
+const portfBox = document.getElementById('portfBox');
+arrows.forEach(arrow => {arrow.addEventListener('click', (e)=> {
+    const Box = document.getElementById('portfBox');
+    let posiScroll = Box.scrollLeft;
+    let widthDiv =   document.getElementById('boxPortf').clientWidth;
+    let focusDiv =   posiScroll / widthDiv;
+
+    const childNodes =document.querySelectorAll('#portfBox > .box__portfolio');
+    const nodeFocus = childNodes[Math.round(focusDiv)];
+    /* console.log("ancho del box hijo " + widthDiv); */
     
+    
+    /* console.log("focus div horizontal" + focusDiv); */   
+
+  let option = e.target.classList[0];
+  switch(option){
+    
+    case 'left':
+      /* console.log("foco en nodo " + nodeFocus.offsetLeft ); */
+      
+      portfBox.scroll({
+        left: (  nodeFocus.offsetLeft - widthDiv  +20),
+        behavior: 'smooth'
+      });
+    break;
+    case 'right':
+      console.log("nex " + (widthDiv+ nodeFocus.offsetLeft + 20));
+      portfBox.scroll({        
+        left: (widthDiv+ nodeFocus.offsetLeft + 20),
+        behavior: 'smooth'
+      });
+    break;
+    }
+
   });
 });
-
-
-const arrows = document.querySelectorAll('.link__arrow');
-arrows.forEach(arrow => {arrow.addEventListener('click', (e)=> {
-    console.log(e.target.parentNode);
-  })
-})
