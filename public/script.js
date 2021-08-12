@@ -57,3 +57,17 @@ document.getElementById('container').addEventListener('scroll', (e) => {
     }
   }, 150);
 }, true);
+
+const breakdownButton = document.querySelectorAll('.link__arrow');
+breakdownButton.forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    
+  });
+});
+
+
+const arrows = document.querySelectorAll('.link__arrow');
+arrows.forEach(arrow => {arrow.addEventListener('click', (e)=> {
+    console.log(e.target.parentNode);
+  })
+})

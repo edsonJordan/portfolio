@@ -112,8 +112,6 @@ h1, h2, h3{
   transition: all var(--animation-time);
 }
 
-
-
 .circular-menu {
   position: fixed;
   width: 16rem;
@@ -139,12 +137,16 @@ h1, h2, h3{
              20px 20px 60px #ffffff; */
              box-shadow:-5px -5px 30px 10px #f4f3ff, 20px 20px 30px 10px #f4f3ff ;
 }
-
-.circular-menu .menu__link.active {
-  color: var(--color__primary);   
+.menu__link{
+  border-bottom: 2px solid transparent;
 }
+.circular-menu .menu__link.active {
+  
+  border-bottom: 2px solid white;
+}
+
 .menu__link.active .icon--nav{
-  fill: var(--color__primary);
+  /* fill: var(--color__primary); */
 }
 .circular-menu ul {
   margin: 0;
@@ -523,7 +525,6 @@ h1, h2, h3{
   width: 100%;
   scroll-snap-type: x mandatory;
   column-gap: 20px;
-  padding-top: 20px;
 }
 .box__portfolio{
   display: flex;
@@ -545,27 +546,40 @@ h1, h2, h3{
   color: var(--color__secundary);
   display: block;
 }
-.span__portfolio{
-  grid-area: span;
+.portfolio__arrows{
+  
+  width: 100%;
+  justify-content: center;
+  flex-direction: row;
+  column-gap: 15px;
+  display: none;
 }
-.img__porftolio{
-  grid-area: image;
-}
-.box__tittle--portfolio{
-  grid-area: tittle;
+.icon__portfolio{
+  width: 20pt;
+  height: 20pt;
+  fill: white;
+  background-color: var(--color__primary);
+  padding: 5px 10px;
 }
 
   ::-webkit-scrollbar {
     width: 0px;
   }
-@media (min-width: 640px) {  
-  
+  @keyframes moveBorder {
+      0%{
+        right: -20rem ;
+      }
+      100%{
+        right: 0;
+      }
+  }
+@media (min-width: 640px) {    
   .section__row{
     align-items: center;
-    height: 80%;
+    height: 90%;
   }
   .row__box{
-    height: 80%;
+    height: 75%;
   }
   .row__box--presentation{   
     text-align: center;    
@@ -588,8 +602,9 @@ h1, h2, h3{
     text-align: center;
   }
   .portfolio__list{
-    grid-template-columns: repeat(4,minmax( 130px, 1fr));
-    
+    grid-template-columns: repeat(4,minmax( 130px, 1fr));  
+    width: fit-content;
+    align-self: center;  
   }
   .portfolio__li{
     border: none;
@@ -597,14 +612,20 @@ h1, h2, h3{
     padding: 16.76px;  
     text-align: center;
   }
+  .portfolio__box{
+    height: 100%;
+  }
   .box__portfolio{
     align-items: center;
-  }
-  .img__porftolio{
-    width: 55%;
     height: 100%;
-    justify-self: center;
+  }
+  .img__porftolio{  
+    justify-self: center;  
+    height: 65%;
   } 
+  .portfolio__arrows{
+    display: flex;
+  }
 }
 @media (min-width: 768px) {  
   .container{
@@ -675,22 +696,56 @@ h1, h2, h3{
   .menu__text{
     display: initial;
   }
+  .span__portfolio{
+    grid-area: span;
+    width: 100%;
+    text-align: right;
+  }
+  .img__porftolio{
+    height: 100%;
+    grid-area: image;
+  }
+  .box__tittle--portfolio{
+    grid-area: tittle;
+  }
   .box__portfolio{
     display: grid;
-    grid-template-columns: .5fr 1.5fr;
+    grid-template-columns: .7fr 1.3fr;
     grid-template-areas: "span image"
                         "span tittle" ;
-   
+    grid-auto-rows: 80% 20%;
   }
+  .circular-menu .menu__link.active{
+    border-bottom: 2px solid transparent;
+  }
+  .circular-menu .menu__link.active::after{
+    content: "";
+    width: 9rem;
+    height: 3.5px;
+    position: absolute;
+    margin-top: 1.8rem;
+    background-color: white;
+    animation: moveBorder 2s;
+  }
+  
 }
 @media (min-width: 1024px) {
-  
+  .box__portfolio {    
+    grid-template-columns: .5fr 1fr;
+    scroll-snap-align: start; 
+    height: 80%;
+  }
+  .section__row{
+    width: 80%;
+    height: 100%;
+  }
   .row__box--contact{
     height: 70%;
     width: 80%;
     align-self: center;
   }
   .img__porftolio {
-    height: 80%;
+    height: 90%;
+    width: 50%;
   }
 }  
