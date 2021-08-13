@@ -757,9 +757,13 @@ h1, h2, h3{
     height: 80%;
   }
   .section__row{
-    width: 80%;
+    width: 70%;
     height: 100%;
   }
+  #portfolio .section__row{
+    width: 80%;
+  }
+ 
   .row__box--contact{
     height: 70%;
     width: 80%;
@@ -773,7 +777,7 @@ h1, h2, h3{
     position: fixed;
     left: 5%;
     bottom:  30%;
-    height: 40%;
+    height: 45%;
     display: flex;
     justify-content: center;   
     z-index: 10;
@@ -798,7 +802,7 @@ h1, h2, h3{
     background-color: red;
   } */
   .appnav__li{    
-    width:6px;
+    width:4px;
     background-color: rgba(51, 160, 204, .6);
     /* background-color: var(--color__secundary); */
   }
@@ -824,12 +828,63 @@ h1, h2, h3{
   }
   
   
-  .appnav__li:hover{
+  .appnav__li.active{
     background-color: rgb(51, 160, 204);
+    width: 8px;
     cursor: pointer;
+  }
+  .appnav__li.active::after{
+    content: "";
+    position: relative;
+    top: -13px;
+    color: var(--color__secundary);
+    font-weight: 800;
+    left: 35px;
+    padding: 12px;
+    white-space: nowrap;
+    border-top: 2px solid var(--color__secundary);
+    border-right: 2px solid var(--color__secundary);
+    border-bottom: 2px solid var(--color__secundary);
+    border-radius: 3px;
+  }
+  .appnav__li.active:nth-child(2)::after{
+    content: "presentation";
+  }
+  .appnav__li.active:nth-child(3)::after{
+    content: "Sobre Mi";
+  }
+  .appnav__li.active:nth-child(4)::after{
+    content: "Mis habilidades";
+  }
+  .appnav__li.active:nth-child(5)::after{
+    content: "Portafolio";
+  }
+  .appnav__li.active:nth-child(6)::after{
+    content: "Contactame";
+  }
+  
+  .appnav__li.active::before{
+    content: "";
+    display: block;
+    top: 13px;
+    position: relative;
+    width: 31px;
+    height: 31px;
+    left: 19px;
+    border-left: 2px solid var(--color__secundary);
+    border-bottom: 2px solid var(--color__secundary);
+    transform: rotate(45deg);
   }
   .appnav__li.scroll:hover{
     background-color: transparent;
+  }
+  .float-button{
+    top: 2rem;
+    right: 2rem;
+  }
+  .container__section::after{
+    margin-bottom: 2rem;
+    margin-right: 2rem;
   }
 
  
