@@ -59,6 +59,7 @@ document.getElementById('container').addEventListener('scroll', (e) => {
 }, true);
 const arrows = document.querySelectorAll('.link__arrow');
 const portfBox = document.getElementById('portfBox');
+
 arrows.forEach(arrow => {arrow.addEventListener('click', (e)=> {
     const Box = document.getElementById('portfBox');
     let posiScroll = Box.scrollLeft;
@@ -71,7 +72,7 @@ arrows.forEach(arrow => {arrow.addEventListener('click', (e)=> {
     /* console.log("focus div horizontal" + focusDiv); */   
   let option = e.target.classList[0];
 
-  let preview  =(  nodeFocus.offsetLeft - widthDiv  +20);
+  let preview  =(  nodeFocus.offsetLeft - widthDiv - 20);
   let next = (widthDiv+ nodeFocus.offsetLeft + 20) ;
   switch(option){
     case 'left':
