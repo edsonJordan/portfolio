@@ -562,6 +562,7 @@ h1, h2, h3{
   fill: white;
   background-color: var(--color__primary);
   padding: 5px 10px;
+  border-radius: 6px;
 }
 
   ::-webkit-scrollbar {
@@ -645,7 +646,6 @@ h1, h2, h3{
   }
   .link__arrow{
     display: flex;
-    border-radius: 35px;
   }
 }
 @media (min-width: 768px) {  
@@ -830,7 +830,7 @@ h1, h2, h3{
   
   .appnav__li.active{
     background-color: rgb(51, 160, 204);
-    width: 8px;
+    width: 7px;
     cursor: pointer;
   }
   .appnav__li.active::after{
@@ -891,6 +891,9 @@ h1, h2, h3{
 
 }  
 @media (min-width: 1536px) {
-  
+  .section__row{
+    width: 50%;
+   
+  }
 
  }
