@@ -78,7 +78,7 @@ document.getElementById('container').addEventListener('scroll', (e) => {
         appChilds[5].classList.add('active');
       break;
     }
-  }, 500);
+  }, 250);
 }, true);
 const arrows = document.querySelectorAll('.link__arrow');
 const portfBox = document.getElementById('portfBox');
