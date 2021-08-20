@@ -30,16 +30,11 @@ function breakDiv(number, list){
   list.childNodes[number].childNodes[1].classList.add('active')
 }
 var timer = null;
-
-
-
-
 document.getElementById('container').addEventListener('scroll', (e) => {
   clearTimeout(timer);
   
   //Renew timer
   timer = setTimeout(function () {
-    
     let posiScroll = document.getElementById('container').scrollTop;
     let heightDiv = document.getElementById('presentation').clientHeight;
     let focusDiv = posiScroll / heightDiv;
@@ -82,7 +77,6 @@ document.getElementById('container').addEventListener('scroll', (e) => {
 }, true);
 const arrows = document.querySelectorAll('.link__arrow');
 const portfBox = document.getElementById('portfBox');
-
 arrows.forEach(arrow => {arrow.addEventListener('click', (e)=> {
     const Box = document.getElementById('portfBox');
     let posiScroll = Box.scrollLeft;
@@ -91,15 +85,12 @@ arrows.forEach(arrow => {arrow.addEventListener('click', (e)=> {
 
     const childNodes =document.querySelectorAll('#portfBox > .box__portfolio');
     const nodeFocus = childNodes[Math.round(focusDiv)];
-    /* console.log("ancho del box hijo " + widthDiv); */   
-    /* console.log("focus div horizontal" + focusDiv); */   
   let option = e.target.classList[0];
 
   let preview  =(  nodeFocus.offsetLeft - widthDiv - 20);
   let next = (widthDiv+ nodeFocus.offsetLeft + 20) ;
   switch(option){
     case 'left':
-      /* console.log("foco en nodo " + nodeFocus.offsetLeft ); */
        portfBox.scroll({
         left: preview,
         behavior: 'smooth'
@@ -114,3 +105,27 @@ arrows.forEach(arrow => {arrow.addEventListener('click', (e)=> {
     }
   });
 });
+const points = document.querySelectorAll('.point__card');
+points.forEach(point => {point.addEventListener('click', (e)=> {
+  if(e.target.nodeName == "A"){
+      e.target.parentNode.getElementsByClassName('active')[0].classList.remove('active');
+      e.target.classList.add('active')
+    }  
+  })
+})
+
+/* Scroll horizontal Box Card */
+var timeCard = null;
+document.getElementById('boxCard').addEventListener('scroll', (e) => {
+  clearTimeout(timeCard);
+  //Renew timer
+  timeCard = setTimeout(function () {
+    const listPoint = document.getElementById('pointCard');
+    let posiScroll = document.getElementById('boxCard').scrollLeft;
+    let widthDiv = document.getElementById('database').clientWidth;
+    let focusDiv = posiScroll / widthDiv;
+    let selectPoint = listPoint.getElementsByTagName('a')[Math.round(focusDiv)];
+    listPoint.getElementsByClassName('active')[0].classList.remove('active');
+    selectPoint.classList.add('active')
+  }, 250);
+}, true);

@@ -4,7 +4,6 @@ body{
   padding: 0;
   width: calc(100vw - (100vw - 100%));
   font-family: 'Karla', sans-serif;
- 
 }
 ul{
   list-style: none;
@@ -207,6 +206,7 @@ h1, h2, h3{
   height: 100vh;
   flex-direction: column;
   scroll-snap-type: y mandatory; 
+  scroll-behavior: smooth;
 }
 .container .container__section {
   position: sticky;
@@ -247,6 +247,9 @@ h1, h2, h3{
   font-size: var(--font--md);
   letter-spacing: .2px;
   line-height: 27px;
+}
+.row__box.skill{
+  height: 80%;
 }
 .row__box--contact{
   height: 80%;
@@ -363,8 +366,8 @@ h1, h2, h3{
     fill: white;
   }
   .icon--logo{
-    width: 70pt;
-    height: 70pt;
+    width: 40pt;
+    height: 40pt;
   }
   /* End component button */
 
@@ -416,63 +419,74 @@ h1, h2, h3{
 
   /* End effect component button */
 
-  
   .box__card{
-    width: 100%;
-    height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    overflow: scroll;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    column-gap: 25px;
+    height: 85%;
+    scroll-behavior: smooth;
   }
   /* Start component card */
   .card{
     display: flex;
     position: relative;
     flex-direction: column; 
-    padding: 1rem 1rem; 
-    border: 1px solid transparent;
-    width: 80%;
-    align-self: center;
-    border-radius: 20px;
-    min-height: 10rem;
+ 
+    align-items: center;
     justify-content: center;
-    /* box-shadow: 20px 20px 30px 10px blue,
-    -5px -5px 30px 10px red; */
+    min-width: calc(100vw - calc(var(--padding-x)* 2));   
+    scroll-snap-align: center;    
+ 
+
   }
-  .card:hover{
-   /*  background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 ); */
-    box-shadow: 20px 20px 30px 10px #F4F3FF,    
-    -5px -5px 30px 10px #F4F3FF; 
+  .card .card__content:hover{
+    /* box-shadow: 10px 10px 20px 5px #F4F3FF,    
+    -5px -5px 30px 10px #F4F3FF;  */
+  
+  }
+  .card:hover .card__header{
+    /* color: var(--color__primary); */
+  }
+  .card:hover .icon__skill{
+    /* fill: var(--color__primary); */
+  }
+  .card__content{
+    display: flex;
+    border: 1px solid transparent; 
+    flex-direction: column; 
+    border-radius: 20px;
+    width: 70%;
+    padding: 3rem 20px;
+    height: 65%;
+    justify-content: start;
+    align-items: center;
+    row-gap: 20px;
+    box-shadow: 8px 8px 10px 2.5px #F4F3FF,    
+    -8px -8px 15px 5px #F4F3FF; 
   }
   .card__header{
     display: flex;
     flex-direction: row;
     align-items:center;
     column-gap: 10px;
-    color: rgb(18,14,71, .8);    
+    color: var(--color__primary);  
     line-height: 5px;
     font-weight: 600;
     justify-content: center;
   }
-  .card:hover .card__header{
-    color: var(--color__primary);
-  }
-  .card:hover .icon__skill{
-    fill: var(--color__primary);
-  }
   .icon__skill{
     width: 20pt;
     height: 20pt;
-    fill: rgb(18,14,71, .8); 
+    /* fill: rgb(18,14,71, .8);  */
+    fill: var(--color__primary);
   }
   .list__card{
     display: flex;
     flex-direction: column;
-    row-gap: 3px;
+    row-gap: 8px;
   }
   .li__card{
     color: var(--color__font);
@@ -480,6 +494,23 @@ h1, h2, h3{
     font-weight: 500;
     line-height: 20px;
     text-align: center;
+  }
+  .point__card{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    column-gap: 15px;
+    justify-content: center;
+  }
+  .link__card{
+    background-color: var(--color__gray--low);
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    /* var(--color__font); */
+  }
+  .link__card.active{
+    background-color: var(--color__font);
   }
   /* End component card */
   /* Start Component */
@@ -528,7 +559,7 @@ h1, h2, h3{
   /* End Component  checklist portfolio*/
   /*Start Section portfolio */
 .img__porftolio{
-  width: 100%;
+  width: 50%;
   object-fit: contain;
   filter: hue-rotate(90deg);
   
@@ -537,15 +568,17 @@ h1, h2, h3{
   display: flex;
   flex-direction: row;
   overflow-x: scroll; 
-  width: 100vw;
+  width: 100%;
   scroll-snap-type: x mandatory;
-  column-gap: 20px;
+  column-gap: 25px;
 }
 .box__portfolio{
   display: flex;
   flex-direction: column;
   /* Calculate width 100viewport - double padding x applicated */
+  
   min-width: calc(100vw - calc(var(--padding-x)* 2));
+  width: 100vw;
   scroll-snap-align: center; 
   row-gap: 15px;
   height: 100%;
@@ -578,21 +611,11 @@ h1, h2, h3{
   padding: 5px 10px;
   border-radius: 6px;
 }
-
   ::-webkit-scrollbar {
     width: 0px;
   }
   .appnav{
     display: none;
-  }
-  @keyframes moveBorder {
-      0%{
-        right: -20rem ;
-      }
-     
-      100%{
-        right: 0;
-      }
   }
   @keyframes movePoint {
     0%{
@@ -624,6 +647,7 @@ h1, h2, h3{
   .section__row--presentation{
     flex-direction: row;
   }
+  
   .row__box--about{
     height: 50%;
   }
@@ -636,6 +660,7 @@ h1, h2, h3{
   .box__tittle--portfolio{
     text-align: center;
   }
+  
   .portfolio__list{
     grid-template-columns: repeat(4,minmax( 130px, 1fr));  
     width: fit-content;
@@ -684,16 +709,7 @@ h1, h2, h3{
     font-size: 1.2rem;
     color: var(--color__secundary);
 }
-  .box__card {
-    flex-direction: row;
-    align-items: center;
-  }
-  .card{
-    height: fit-content;
-    justify-content: flex-start;
-    align-self: initial;
-    row-gap: 10px;
-  }
+
   .float-button{
     top: 1rem;
   }
@@ -772,6 +788,10 @@ h1, h2, h3{
   
 }
 @media (min-width: 1024px) {
+  
+  .portfolio__box{
+    width: 100vw;
+  }
   .box__portfolio {    
     grid-template-columns: .5fr 1fr;
     scroll-snap-align: center;
@@ -816,15 +836,6 @@ h1, h2, h3{
     width: 100%;
     justify-items: center;
   }
-/*   .appnav__ul::before{
-    content: "";
-    position: relative;
-    width: 10px;
-    height: 70px;
-    top: 3rem;
-    left: -2px;
-    background-color: red;
-  } */
   .appnav__li{    
     width:4px;
     background-color: rgba(51, 160, 204, .6);
@@ -915,6 +926,16 @@ h1, h2, h3{
     width: 20%;
     height: 200px;
   }
+  .point__card{
+    display: none;
+  }
+  .box__card{
+    scroll-snap-type: initial;
+    display: grid;
+    
+    scroll-behavior: initial;
+  }
+  
  
 
 }  
