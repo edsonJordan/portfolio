@@ -105,18 +105,26 @@ arrows.forEach(arrow => {arrow.addEventListener('click', (e)=> {
     }
   });
 });
+/* Events clicks points  */
 const points = document.querySelectorAll('.point__card');
-points.forEach(point => {point.addEventListener('click', (e)=> {
-  if(e.target.nodeName == "A"){
+points?.forEach(point => {point.addEventListener('click', (e)=> {
+  if(e.target.nodeName == "LABEL"){      
+      let parentCard = document.getElementById('boxCard');
       e.target.parentNode.getElementsByClassName('active')[0].classList.remove('active');
-      e.target.classList.add('active')
+      e.target.classList.add('active');
+      let pointSele= e.target.getAttribute('attr-order');
+      let focusSelet = parentCard.getElementsByClassName('card')[pointSele];
+      boxCard.scroll({
+        left:focusSelet.offsetLeft,
+        behavior: 'smooth'
+      });
     }  
   })
 })
 
 /* Scroll horizontal Box Card */
 var timeCard = null;
-document.getElementById('boxCard').addEventListener('scroll', (e) => {
+document.getElementById('boxCard')?.addEventListener('scroll', (e) => {
   clearTimeout(timeCard);
   //Renew timer
   timeCard = setTimeout(function () {
@@ -124,7 +132,7 @@ document.getElementById('boxCard').addEventListener('scroll', (e) => {
     let posiScroll = document.getElementById('boxCard').scrollLeft;
     let widthDiv = document.getElementById('database').clientWidth;
     let focusDiv = posiScroll / widthDiv;
-    let selectPoint = listPoint.getElementsByTagName('a')[Math.round(focusDiv)];
+    let selectPoint = listPoint.getElementsByTagName('label')[Math.round(focusDiv)];
     listPoint.getElementsByClassName('active')[0].classList.remove('active');
     selectPoint.classList.add('active')
   }, 250);
