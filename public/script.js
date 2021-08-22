@@ -31,8 +31,7 @@ function breakDiv(number, list){
 }
 var timer = null;
 document.getElementById('container').addEventListener('scroll', (e) => {
-  clearTimeout(timer);
-  
+  clearTimeout(timer);  
   //Renew timer
   timer = setTimeout(function () {
     let posiScroll = document.getElementById('container').scrollTop;
@@ -75,36 +74,7 @@ document.getElementById('container').addEventListener('scroll', (e) => {
     }
   }, 250);
 }, true);
-const arrows = document.querySelectorAll('.link__arrow');
-const portfBox = document.getElementById('portfBox');
-arrows.forEach(arrow => {arrow.addEventListener('click', (e)=> {
-    const Box = document.getElementById('portfBox');
-    let posiScroll = Box.scrollLeft;
-    let widthDiv =   document.getElementById('boxPortf').clientWidth;
-    let focusDiv =   posiScroll / widthDiv;
 
-    const childNodes =document.querySelectorAll('#portfBox > .box__portfolio');
-    const nodeFocus = childNodes[Math.round(focusDiv)];
-  let option = e.target.classList[0];
-
-  let preview  =(  nodeFocus.offsetLeft - widthDiv - 20);
-  let next = (widthDiv+ nodeFocus.offsetLeft + 20) ;
-  switch(option){
-    case 'left':
-       portfBox.scroll({
-        left: preview,
-        behavior: 'smooth'
-      });
-    break;
-    case 'right':
-      portfBox.scroll({        
-        left: next,
-        behavior: 'smooth'
-      });
-    break;
-    }
-  });
-});
 /* Events clicks points  */
 const points = document.querySelectorAll('.point__card');
 points?.forEach(point => {point.addEventListener('click', (e)=> {
@@ -137,3 +107,63 @@ document.getElementById('boxCard')?.addEventListener('scroll', (e) => {
     selectPoint.classList.add('active')
   }, 250);
 }, true);
+
+
+var positScroll = 0;
+/*  Checked Radio button */
+const radios = document.querySelectorAll('.portfolio__inp');
+radios?.forEach(radio => {radio.addEventListener('change', (e, positScroll)=> {
+        const cards = document.querySelectorAll(".box__portfolio");
+        
+        for (card of cards) {
+          if( e.target.getAttribute('attr-data') === "all"){
+              for (all of cards) {              
+                all.classList.remove('none');
+                all.classList.add('active')
+              }
+            break;
+          }
+          if(card.getAttribute('attr-data') === e.target.getAttribute('attr-data')){
+              card.classList.remove('none');   
+              card.classList.add('active');         
+          }else{
+            card.classList.add('none');
+            card.classList.remove('active');  
+          }                     
+        }
+        document.getElementById('portfBox').scrollLeft = 0;
+        this.positScroll = 0;
+  })
+})
+
+let arrows = document.querySelectorAll('.link__arrow');
+arrows.forEach(arrow => {arrow.addEventListener('click', (e)=> {
+  let option = e.target.classList[0];
+  let widthDiv = document.querySelectorAll('.box__portfolio.active')[0].clientWidth; 
+  let portfBox = document.getElementById('portfBox');
+  /* console.log("ancho del width " + portfBox.scrollWidth);
+  console.log("Posición de scroll"+ positScroll); */
+  let maxCont = portfBox.scrollWidth;
+  const minCont = 0;
+  switch(option){
+    case 'right':
+      /* portfBox.scrollLeft +=widthDiv; */
+      /* console.log("ancho Inicial " + widthDiv); */
+      let Sum = this.positScroll + (widthDiv + 20);      
+      portfBox.scroll({      
+        left: Sum > maxCont ? this.positScroll : this.positScroll += widthDiv,
+        behavior: 'smooth'
+      });
+    break; 
+    case 'left':
+      /* portfBox.scrollLeft -=widthDiv; */
+      let Rest = this.positScroll - (widthDiv - 20);      
+       portfBox.scroll({
+        left: Rest > minCont ? this.positScroll -= widthDiv : this.positScroll,
+        behavior: 'smooth'
+      });
+    break;    
+    }
+
+  });
+});

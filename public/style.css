@@ -21,9 +21,7 @@ a{
 h1, h2, h3{
   margin: 0;
 }
-.none{
-  display: none;
-}
+
 :root {
   --animation-time: 0.6s;
   --padding-x:25px;
@@ -439,7 +437,7 @@ h1, h2, h3{
     border-radius: 20px;
     width: 60%;
     padding: 3rem 20px;
-    height: 40%;
+    height: 50%;
     justify-content: start;
     align-items: center;
     row-gap: 20px;
@@ -531,11 +529,14 @@ h1, h2, h3{
   .portfolio__li:nth-child(4), .portfolio__li:nth-child(8){
     border-left: none;
   }
+  .portfolio__inp{
+    display: none;
+  }
   .portfolio__inp:checked + .portfolio__li{
     border-bottom: 2px solid rgb(18,14,71, .8);
-    color: var(--color__primary);
-    
+    color: var(--color__primary);    
   }
+  
   /* End Component  checklist portfolio*/
   /*Start Section portfolio */
 .img__porftolio{
@@ -714,9 +715,12 @@ h1, h2, h3{
     display: flex;
     height: 100%;
   }
+  .row__box.skill{
+    height: 95%;
+  }
   .row__box{
     row-gap: 0px;
-    height: 90%;
+    height: 95%;
   }
   .card{
     min-width: 50%;
@@ -732,7 +736,7 @@ h1, h2, h3{
         "span image"
         "span tittle";
     grid-auto-rows: 80% 20%;
-}
+  }
 }
 
 @media (min-width: 768px) {  
@@ -960,13 +964,20 @@ h1, h2, h3{
 }  
 @media (min-width: 1536px) {
   .section__row{
-    width: 60%;
+    width: 65%;
   }
   .box__card{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: initial;
+  }
+  .card__content{
+    height: 40%;
   } 
  }
 /*  @media screen and (min-width:768px) and (max-width:1024px) and (orientation:landscape){
  
 } */
+
+.none{
+  display: none;
+}

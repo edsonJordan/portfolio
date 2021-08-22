@@ -96,7 +96,7 @@
   <!-- Start Container -->
   <div class="container" id="container">
       <!--Start Presentation Section  -->
-      <header class="container__section " id="presentation" >
+      <header class="container__section none" id="presentation" >
         <article class="section__row section__row--presentation">       
           <img src="resource/img/photo.jpeg" class="img__photo" alt="">       
             <div class="row__box row__box--presentation">              
@@ -114,7 +114,7 @@
       </header>
       <!-- End Presentation section  -->
       <!-- Start About Section -->
-      <section class="container__section " id="about">
+      <section class="container__section none" id="about">
         <article class="section__row ">      
           <img src="resource/img/photo.jpeg" class="img__photo" alt="">              
           <div class="row__box row__box--about">
@@ -144,7 +144,7 @@
       </section>
       <!-- End About section -->
       <!-- Start Skills section -->
-      <section class="container__section" id="skills">          
+      <section class="container__section none" id="skills">          
           <article class="section__row">
             <div class="row__box skill">
               <h2 class="box__tittle box__tittle--content" >+5 Años de experiencia <strong class="strong strong--content"> Mis habilidades</strong> 
@@ -238,56 +238,77 @@
             <h2 class="box__tittle box__tittle--content" >Conoce mis proyectos <strong class="strong strong--content">Ver portafolio</strong> 
             </h2>            
             <ul class="portfolio__list">
-              <input type="radio" name="list_portf" class="none portfolio__inp" id="ligen">
+              <input type="radio" name="list_portf" attr-data="all" class=" portfolio__inp" checked  id="ligen">
               <label class="portfolio__li" for="ligen">General</label>
-              <input type="radio" name="list_portf" class="none portfolio__inp" id="limaq">
-              <label class="portfolio__li" for="limaq">Maquetación</label>
-              <input type="radio" name="list_portf" class="none portfolio__inp" id="liapp">
-              <label class="portfolio__li" for="liapp">Applicación</label>
-              <input type="radio" name="list_portf" class="none portfolio__inp" id="lilad">
-              <label class="portfolio__li" for="lilad">Lading Page</label>                          
+              <input type="radio" name="list_portf" attr-data="web" class=" portfolio__inp" id="limaq">
+              <label class="portfolio__li" for="limaq">Webs</label>
+              <input type="radio" name="list_portf" attr-data="app" class=" portfolio__inp" id="liapp">
+              <label class="portfolio__li" for="liapp">Sistemas</label>
+              <input type="radio" name="list_portf" attr-data="cms" class=" portfolio__inp" id="lilad">
+              <label class="portfolio__li" for="lilad">Gestor de contenido</label>                          
             </ul>
             <div class="portfolio__box" id="portfBox" >
-              <div class="box__portfolio" id="boxPortf">
+              <div attr-data="web" class="box__portfolio active" id="boxPortf">
                 <span class="span__portfolio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, et! Laborum nisi officiis, ipsam neque quos repellat doloribus quam illo officia porro amet, rem doloremque iste ad accusantium iure voluptatum.</span>
                 <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" 
                 alt="" class="img img__porftolio">
-                <h3 class="box__tittle--portfolio" >Diseño de interfaz para  <strong class="strong--portfolio">Empresa</strong> 
+                <h3 class="box__tittle--portfolio" >Creación de web para  <strong class="strong--portfolio">Empresa</strong> 
                 </h3>
               </div>
-              <div class="box__portfolio">
+              <div attr-data="web" class="box__portfolio active">
                 <span class="span__portfolio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, et! Laborum nisi officiis, ipsam neque quos repellat doloribus quam illo officia porro amet, rem doloremque iste ad accusantium iure voluptatum.</span>
                 <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" 
                 alt="" class="img img__porftolio">
-                <h3 class="box__tittle--portfolio" >Diseño de interfaz para  <strong class="strong--portfolio">Empresa</strong> 
+                <h3 class="box__tittle--portfolio" >Creación de web para   <strong class="strong--portfolio">Empresa</strong> 
                 </h3>
               </div>
-              <div class="box__portfolio">
+              <div attr-data="cms" class="box__portfolio active">
                 <span class="span__portfolio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, et! Laborum nisi officiis, ipsam neque quos repellat doloribus quam illo officia porro amet, rem doloremque iste ad accusantium iure voluptatum.</span>
                 <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" 
                 alt="" class="img img__porftolio">
-                <h3 class="box__tittle--portfolio" >Diseño de interfaz para  <strong class="strong--portfolio">Empresa</strong> 
+                <h3 class="box__tittle--portfolio" >Implementación de CMS para  <strong class="strong--portfolio">Empresa</strong> 
                 </h3>
               </div>
-              <div class="box__portfolio">
+              <div attr-data="app" class="box__portfolio active">
                 <span class="span__portfolio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, et! Laborum nisi officiis, ipsam neque quos repellat doloribus quam illo officia porro amet, rem doloremque iste ad accusantium iure voluptatum.</span>
                 <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" 
                 alt="" class="img img__porftolio">
-                <h3 class="box__tittle--portfolio" >Diseño de interfaz para  <strong class="strong--portfolio">Empresa</strong> 
+                <h3 class="box__tittle--portfolio" >Implementación de applicación web para<strong class="strong--portfolio">Empresa</strong> 
                 </h3>
               </div>
-              <div class="box__portfolio">
+              <div attr-data="cms" class="box__portfolio active">
                 <span class="span__portfolio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, et! Laborum nisi officiis, ipsam neque quos repellat doloribus quam illo officia porro amet, rem doloremque iste ad accusantium iure voluptatum.</span>
                 <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" 
                 alt="" class="img img__porftolio">
-                <h3 class="box__tittle--portfolio" >Diseño de interfaz para  <strong class="strong--portfolio">Empresa</strong> 
+                <h3 class="box__tittle--portfolio" >Implementación de CMS para  <strong class="strong--portfolio">Empresa</strong> 
                 </h3>
               </div>
-              <div class="box__portfolio">
+              <div attr-data="cms" class="box__portfolio active">
                 <span class="span__portfolio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, et! Laborum nisi officiis, ipsam neque quos repellat doloribus quam illo officia porro amet, rem doloremque iste ad accusantium iure voluptatum.</span>
                 <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" 
                 alt="" class="img img__porftolio">
-                <h3 class="box__tittle--portfolio" >Diseño de interfaz para  <strong class="strong--portfolio">Empresa</strong> 
+                <h3 class="box__tittle--portfolio" >Implementación de CMS para  <strong class="strong--portfolio">Empresa</strong> 
+                </h3>
+              </div>
+              <div attr-data="cms" class="box__portfolio active">
+                <span class="span__portfolio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, et! Laborum nisi officiis, ipsam neque quos repellat doloribus quam illo officia porro amet, rem doloremque iste ad accusantium iure voluptatum.</span>
+                <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" 
+                alt="" class="img img__porftolio">
+                <h3 class="box__tittle--portfolio" >Implementación de CMS para  <strong class="strong--portfolio">Empresa</strong> 
+                </h3>
+              </div>
+              <div attr-data="app" class="box__portfolio active">
+                <span class="span__portfolio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, et! Laborum nisi officiis, ipsam neque quos repellat doloribus quam illo officia porro amet, rem doloremque iste ad accusantium iure voluptatum.</span>
+                <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" 
+                alt="" class="img img__porftolio">
+                <h3 class="box__tittle--portfolio" >Implementación de applicación web para<strong class="strong--portfolio">Empresa</strong> 
+                </h3>
+              </div>
+              <div attr-data="app" class="box__portfolio">
+                <span class="span__portfolio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, et! Laborum nisi officiis, ipsam neque quos repellat doloribus quam illo officia porro amet, rem doloremque iste ad accusantium iure voluptatum.</span>
+                <img src="https://assets.website-files.com/5f067b661807eb6a8d6fe57d/5f067b661807eb78206fe58a_Project%20Image%2001.png" 
+                alt="" class="img img__porftolio">
+                <h3 class="box__tittle--portfolio" >Implementación de applicación web para <strong class="strong--portfolio">Empresa</strong> 
                 </h3>
               </div>
             </div>
@@ -309,7 +330,7 @@
       </section>
       <!-- End Portfolio section -->
       <!-- Start Contact section -->
-      <section class="container__section" id="contact">
+      <section class="container__section none" id="contact">
         <article class="section__row ">          
           <div class="row__box row__box--contact">
             <h2 class="box__tittle box__tittle--content" >¿Tienes una idea en mente?</h2>
