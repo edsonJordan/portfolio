@@ -108,13 +108,12 @@ document.getElementById('boxCard')?.addEventListener('scroll', (e) => {
   }, 250);
 }, true);
 
-
+const arrows = document.querySelectorAll('.link__arrow');
 var positScroll = 0;
 /*  Checked Radio button */
 const radios = document.querySelectorAll('.portfolio__inp');
 radios?.forEach(radio => {radio.addEventListener('change', (e, positScroll)=> {
-        const cards = document.querySelectorAll(".box__portfolio");
-        
+        const cards = document.querySelectorAll(".box__portfolio");        
         for (card of cards) {
           if( e.target.getAttribute('attr-data') === "all"){
               for (all of cards) {              
@@ -133,37 +132,60 @@ radios?.forEach(radio => {radio.addEventListener('change', (e, positScroll)=> {
         }
         document.getElementById('portfBox').scrollLeft = 0;
         this.positScroll = 0;
+        arrows[0].children[0].classList.remove('active');
+        arrows[1].children[0].classList.add('active');
   })
 })
 
-let arrows = document.querySelectorAll('.link__arrow');
+
+
+function limitArrow(direction){
+    if(direction){
+      arrows[0].children[0].classList.add('active');
+      arrows[1].children[0].classList.remove('active');      
+    }else{
+      arrows[0].children[0].classList.remove('active');
+      arrows[1].children[0].classList.add('active');      
+    }
+    
+}
 arrows.forEach(arrow => {arrow.addEventListener('click', (e)=> {
   let option = e.target.classList[0];
   let widthDiv = document.querySelectorAll('.box__portfolio.active')[0].clientWidth; 
   let portfBox = document.getElementById('portfBox');
-  /* console.log("ancho del width " + portfBox.scrollWidth);
-  console.log("Posición de scroll"+ positScroll); */
   let maxCont = portfBox.scrollWidth;
   const minCont = 0;
   switch(option){
     case 'right':
-      /* portfBox.scrollLeft +=widthDiv; */
-      /* console.log("ancho Inicial " + widthDiv); */
-      let Sum = this.positScroll + (widthDiv + 20);      
+      let Sum = this.positScroll + widthDiv + 40 ;      
       portfBox.scroll({      
-        left: Sum > maxCont ? this.positScroll : this.positScroll += widthDiv,
+        left: Sum >= maxCont ?  this.positScroll : this.positScroll += (widthDiv + 40),
         behavior: 'smooth'
       });
+      if(Sum >= maxCont){
+        limitArrow(true);
+      }else{      
+        arrows[0].children[0].classList.add('active');
+        arrows[1].children[0].classList.add('active');
+      }      
     break; 
-    case 'left':
-      /* portfBox.scrollLeft -=widthDiv; */
-      let Rest = this.positScroll - (widthDiv - 20);      
+    case 'left':      
+      let Rest = this.positScroll - (widthDiv + 40);
+      /* console.log("Posición Inicial" + positScroll );
+      console.log("scroll general" + maxCont );      */      
        portfBox.scroll({
-        left: Rest > minCont ? this.positScroll -= widthDiv : this.positScroll,
+        left: Rest >= minCont ? this.positScroll -= (widthDiv + 40) :  this.positScroll ,
         behavior: 'smooth'
       });
-    break;    
+      /* console.log("Posición Final" +positScroll); */
+    if(Rest <= minCont){
+        limitArrow(false);
+    }else{    
+      arrows[0].children[0].classList.add('active');
+      arrows[1].children[0].classList.add('active');
+    }  
+    break; 
+      
     }
-
   });
 });
