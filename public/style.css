@@ -807,14 +807,16 @@ h1, h2, h3{
     align-items: center;
   }
   .circular-menu li{
-    width: 60%;
+    width: 70%;
     position: initial;
     transform-origin: initial;
   }
   .menu__text{
     display: initial;
   }
-  
+  .circular-menu a {
+    justify-content: start;
+  }
   .box__portfolio{
     display: grid;
     grid-template-columns: .7fr 1.3fr;
