@@ -160,7 +160,8 @@ h1, h2, h3{
 }
 .circular-menu a {
   text-decoration: none;
-  display: block;
+  display: flex;
+  justify-content: center;
   color: #fff;
 }
 .circular-menu li {
@@ -172,23 +173,30 @@ h1, h2, h3{
   text-align: center;
 }
 .circular-menu li:nth-child(2) {
-  transform: rotate(-30deg);
+  transform: rotate(-27deg);
 }
 .circular-menu li:nth-child(2) a {
-  transform: rotate(30deg);
+  transform: rotate(27deg);
 }
 .circular-menu li:nth-child(3) {
-  transform: rotate(-60deg);
+  transform: rotate(-54deg);
 }
 .circular-menu li:nth-child(3) a {
-  transform: rotate(60deg);
+  transform: rotate(54deg);
 }
 .circular-menu li:nth-child(4) {
-  transform: rotate(-90deg);
+  transform: rotate(-81deg);
 }
 .circular-menu li:nth-child(4) a {
-  transform: rotate(90deg);
+  transform: rotate(81deg);
 }
+.circular-menu li:nth-child(5) {
+  transform: rotate(-108deg);
+}
+.circular-menu li:nth-child(5) a {
+  transform: rotate(108deg);
+}
+
 
 /* End Navigation Component */
 .container {

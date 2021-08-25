@@ -37,10 +37,7 @@ document.getElementById('container').addEventListener('scroll', (e) => {
     let posiScroll = document.getElementById('container').scrollTop;
     let heightDiv = document.getElementById('presentation').clientHeight;
     let focusDiv = posiScroll / heightDiv;
-
     const list =  document.getElementById('listNav');
-
-
     const appUl = document.getElementById('appUl');
     let appActive = appUl.getElementsByClassName('active');
     const appChilds =document.querySelectorAll('#appUl > .appnav__li');
@@ -57,17 +54,17 @@ document.getElementById('container').addEventListener('scroll', (e) => {
         appChilds[2].classList.add('active');  
         break;
       case 2:            
-        breakDiv(3, list); 
+        breakDiv(5, list); 
         appActive[0].classList.remove('active');
         appChilds[3].classList.add('active');
       break;
       case 3:            
-        breakDiv(5, list); 
+        breakDiv(7, list); 
         appActive[0].classList.remove('active');
         appChilds[4].classList.add('active');
       break;
       case 4:            
-        breakDiv(7, list); 
+        breakDiv(9, list); 
         appActive[0].classList.remove('active');
         appChilds[5].classList.add('active');
       break;
@@ -136,9 +133,6 @@ radios?.forEach(radio => {radio.addEventListener('change', (e, positScroll)=> {
         arrows[1].children[0].classList.add('active');
   })
 })
-
-
-
 function limitArrow(direction){
     if(direction){
       arrows[0].children[0].classList.add('active');
