@@ -121,7 +121,7 @@ h1, h2, h3{
 .circular-menu {
   position: fixed;
   width: 16rem;
-  height: 16rem;
+  height: 17rem;
   background: var(--color__secundary);
  
   bottom: -5.5rem;
@@ -167,9 +167,9 @@ h1, h2, h3{
 .circular-menu li {
   position: absolute;
   width: 2rem;
-  top: 2rem;
-  left: calc(50% - 1rem);
-  transform-origin: center 6rem;
+  top: 2.1rem;
+  left: calc(52% - 1rem);
+  transform-origin: center 6.2rem;
   text-align: center;
 }
 .circular-menu li:nth-child(2) {
@@ -989,9 +989,7 @@ h1, h2, h3{
   } 
  }
 /*  @media screen and (min-width:768px) and (max-width:1024px) and (orientation:landscape){
- 
 } */
-
 .none{
   display: none;
 }
