@@ -41,7 +41,6 @@ document.getElementById('container').addEventListener('scroll', (e) => {
     const appUl = document.getElementById('appUl');
     let appActive = appUl.getElementsByClassName('active');
     const appChilds =document.querySelectorAll('#appUl > .appnav__li');
-
     switch (Math.round(focusDiv)) {
       case 0:                       
         breakDiv(1, list);
